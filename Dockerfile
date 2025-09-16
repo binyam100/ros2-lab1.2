@@ -17,7 +17,13 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y python3-pip emacs vim nano
 ENV SHELL=/bin/bash
 
-COPY ./src /ros_ws/src/student_src
+COPY --chmod=777 ./src /ros_ws/src/student_src
+
+RUN chmod a+rw -R /ros_ws
+
+RUN chown $USERNAME:$USERNAME -R /ros_ws
+
+USER $USERNAME
 
 WORKDIR /ros_ws
 
