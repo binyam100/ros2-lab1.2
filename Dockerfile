@@ -21,7 +21,7 @@ COPY ./src /ros_ws/src/student_src
 
 WORKDIR /ros_ws
 
-RUN . /opt/ros/jazzy/setup.sh && colcon build --symlink-install
+RUN . /class_ws/install/setup.sh && colcon build --symlink-install
 
 USER $USERNAME
 CMD ["/bin/bash"]
