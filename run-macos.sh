@@ -8,6 +8,6 @@ docker run -it --rm \
   --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
   --env="XAUTHORITY=$XAUTH" \
   --volume="$XAUTH:$XAUTH" \
-  -v ./src:/student_src \
+  -v ./src:/ros_ws/src/student_src \
   --privileged \
 ${dirname}
